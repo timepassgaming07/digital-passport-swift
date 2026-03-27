@@ -11,7 +11,7 @@ struct TrustEngineView: View {
             AmbientBackground()
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 24) {
-                    GlassCard(cornerRadius: 28, glowColor: Color.stCyan, glowOpacity: 0.16) {
+                    GlassCard(cornerRadius: 28) {
                         VStack(spacing: 12) {
                             Image(systemName: "network")
                                 .font(.system(size: 52)).foregroundStyle(Color.stCyan)
@@ -32,7 +32,7 @@ struct TrustEngineView: View {
                     UseCaseGrid()
                     TrustNetworkCard()
 
-                    GlassCard(cornerRadius: 24, glowColor: Color.stPurple, glowOpacity: 0.15) {
+                    GlassCard(cornerRadius: 24) {
                         VStack(alignment: .leading, spacing: 10) {
                             Label("6. The Future of Trust", systemImage: "sparkles")
                                 .font(.stHeadline).foregroundStyle(Color.stPurple)
@@ -47,7 +47,7 @@ struct TrustEngineView: View {
             }
         }
         .navigationTitle("Trust Engine")
-        .toolbarBackground(.ultraThinMaterial, for: .navigationBar)
+
         .toolbarColorScheme(.dark, for: .navigationBar)
         .onAppear { startPipeline() }
         .onDisappear { timer?.invalidate() }

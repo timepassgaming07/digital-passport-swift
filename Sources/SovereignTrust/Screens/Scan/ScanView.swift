@@ -54,7 +54,7 @@ struct ScanView: View {
                             } label: {
                                 Image(systemName:"arrow.counterclockwise")
                                     .frame(width:44,height:44)
-                                    .background(.regularMaterial,in:Circle())
+                                    .glass(cornerRadius: .infinity)
                                     .foregroundStyle(Color.stCyan)
                             }
                         }
@@ -78,7 +78,7 @@ struct ScanView: View {
         }
         .navigationTitle("Scan & Verify")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbarBackground(.ultraThinMaterial, for:.navigationBar)
+
         .toolbarColorScheme(.dark, for:.navigationBar)
     }
 

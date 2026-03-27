@@ -9,7 +9,7 @@ struct PostCard: View {
     var body: some View {
         GlassCard(cornerRadius:22,
             glowColor:post.trustState.glowColor,
-            glowOpacity:post.trustState == .suspicious ? 0.18 : 0.04,
+            glowOpacity:post.trustState == .suspicious ? 0.10 : 0,
             innerPadding:0,
             style:.liquid) {
             VStack(alignment:.leading,spacing:0) {
@@ -43,8 +43,7 @@ struct PostCard: View {
                 ForEach(post.tags,id:\.self) { tag in
                     Text("#\(tag)").font(.caption).foregroundStyle(Color.stCyan)
                         .padding(.horizontal,8).padding(.vertical,4)
-                        .background(.ultraThinMaterial,in:Capsule())
-                        .overlay(Capsule().stroke(Color.stCyan.opacity(0.3),lineWidth:0.6))
+                        .glassButton(glow: .stCyan, glowIntensity: 0.15)
                 }
             }
         }
@@ -58,7 +57,7 @@ struct PostCard: View {
                 Text("Risk: \(fa.riskScore)/100").font(.caption2.weight(.bold))
                     .foregroundStyle(fa.riskScore > 60 ? Color(hex:"FF3355") : Color(hex:"FFD60A"))
                     .padding(.horizontal,8).padding(.vertical,3)
-                    .background(.ultraThinMaterial,in:Capsule())
+                    .glassButton()
             }
             ForEach(fa.signals) { sig in FraudSignalBadge(signal:sig) }
         }

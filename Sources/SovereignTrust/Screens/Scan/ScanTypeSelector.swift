@@ -19,11 +19,9 @@ struct ScanTypeSelector: View {
                                 .font(.stCaption)
                                 .foregroundStyle(selected==type ? Color.stCyan : Color.stSecondary)
                                 .padding(.horizontal,12).padding(.vertical,8)
-                                .background(
-                                    selected==type ? AnyShapeStyle(.regularMaterial) : AnyShapeStyle(Color.clear),
-                                    in:Capsule())
+                                .glassButton(glow: selected==type ? Color.stCyan : .clear, glowIntensity: selected==type ? 0.30 : 0)
                                 .overlay(Capsule().stroke(
-                                    selected==type ? Color.stCyan.opacity(0.5) : Color.white.opacity(0.10),
+                                    selected==type ? Color.stCyan.opacity(0.50) : Color.white.opacity(0.12),
                                     lineWidth:1))
                         }
                         .buttonStyle(.plain)

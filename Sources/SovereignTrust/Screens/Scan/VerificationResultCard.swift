@@ -75,8 +75,7 @@ struct VerificationResultCard: View {
     private func statChip(_ t:String, color:Color) -> some View {
         Text(t).font(.stCaption).foregroundStyle(color)
             .padding(.horizontal,8).padding(.vertical,4)
-            .background(.ultraThinMaterial,in:Capsule())
-            .overlay(Capsule().stroke(color.opacity(0.3),lineWidth:1))
+            .glassButton(glow: color, glowIntensity: 0.12)
     }
 
     private var trustChain: some View {

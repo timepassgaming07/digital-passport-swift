@@ -34,9 +34,12 @@
 		3B8E708BB170E5246ECED885 /* GlowOrb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E8E59349DF07DD51809B1A /* GlowOrb.swift */; };
 		3CB3EA3418ADC18148BF4C1C /* AuthorBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2711282C5F91E1EBD748AA8E /* AuthorBadge.swift */; };
 		3CF839721F4A962FD2D91B13 /* UseCaseGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7A0EE2A42D84F73823AEFD /* UseCaseGrid.swift */; };
+		3E9D70DD24FBBB11AE8AF5FC /* GlassDistortion.metal in Sources */ = {isa = PBXBuildFile; fileRef = C9265F93E26D81B0A8F26D63 /* GlassDistortion.metal */; };
+		4313E5FE87C70474EA1F51F3 /* GlassPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AC5C0795B5E140B493DA14 /* GlassPanel.swift */; };
 		43A8160C97A42E14BCFD654E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158BCDCCA799C7B6A91DE7C /* SettingsView.swift */; };
 		486D2B89F7E793543906A38F /* TrustScoreRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27D375DF582EA56D7D2C841 /* TrustScoreRing.swift */; };
 		4B08F71B2B2ADDBACC4AE8FD /* QRGeneratorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCB43D4E5EADC6506F0D157 /* QRGeneratorService.swift */; };
+		4FFA56C293CB00A64D4DFC99 /* GlassDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52D728928BE91810B639E7 /* GlassDemoView.swift */; };
 		50598C1C9C30AA4AA8D8AA13 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1026272BBB5CC288C8CE50F /* Formatters.swift */; };
 		505F2EA2D0C6607744B2FEBB /* TrustConceptCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C2A2800B7A5C70E4E580A /* TrustConceptCard.swift */; };
 		50E2C333D7D3FC8EC1D8CAC9 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065417BD2057BFD4C726692 /* Typography.swift */; };
@@ -46,6 +49,7 @@
 		61701A029E1B43B7398A81F7 /* AppearanceSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30725C4C21BFBB88EF5D1A2D /* AppearanceSetup.swift */; };
 		6A07A7BEADC5DEE3D19734B9 /* QuickActionsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCE9D1EEB56664F73038F98 /* QuickActionsGrid.swift */; };
 		6C7A2FE66586447EE7FD414E /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1159F53424691CE68B5381A4 /* Credential.swift */; };
+		6DFD3D57E00285AAA3D939FB /* GlassTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2564F1E7A89214637C798F8C /* GlassTextField.swift */; };
 		6E26886549B31F89FEE0ADCD /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EAF3EAD7B5243DE3FA2B88 /* MockData.swift */; };
 		721D482B485A6F029E4E3196 /* ClaimBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03936CD4BE29F0322189463 /* ClaimBar.swift */; };
 		73AE27F0151F7AE36BF542B0 /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5BD9669FFECB0CFD4A4B02 /* Verification.swift */; };
@@ -53,6 +57,7 @@
 		77CC2D12EDE85703C660BF09 /* TrustGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45E3D4591D2AE8E8510F7FC /* TrustGraph.swift */; };
 		7821F8259C1F174F555922CB /* ProductsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3163CFFDD01DC7DBE3555A5 /* ProductsListView.swift */; };
 		7EBF7CCB89F1C8398B56EE6F /* GlassButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75D4115B64DB80C4EA8178 /* GlassButton.swift */; };
+		8063D1D95FDEE6D4C5469CE9 /* GlassShaderBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C9602B192183142A7D04F3 /* GlassShaderBridge.swift */; };
 		851E76E822AAEAB8FCCAE32C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD167E681E38EA973B2E88 /* AppState.swift */; };
 		8622B5DE3BE26218763B9AB3 /* CredentialCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A81ED0C5B61A536EAD9B68 /* CredentialCard.swift */; };
 		888F47B8A2D17629E271B644 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908B187D4637EFCB9732E8D /* LoadingState.swift */; };
@@ -60,6 +65,7 @@
 		8DEE0618626F410F90355AAE /* VerificationFlowCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1B86953B1E5723FB77D99E /* VerificationFlowCard.swift */; };
 		8F34D40B1784F129974AA7FA /* VerificationStepRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307E7E594D72692C3E358F8 /* VerificationStepRow.swift */; };
 		9097FC71B665812F60EE69B1 /* IdentityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2B109F3CBFECE1F5C82239 /* IdentityCard.swift */; };
+		95AAAF057C66D75F0A01AF44 /* LiquidGlass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585D8A2D9807FF23D9C70F3 /* LiquidGlass.swift */; };
 		9ADBFE92EE5C2AE4242E8D99 /* VerificationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFDAA7CC2D01DB92AEB4DE1 /* VerificationEngine.swift */; };
 		A81174E20933A80F2FA2C175 /* CredentialListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7BD812882F1DF7DFEDC27C /* CredentialListView.swift */; };
 		ADD586A9F62AF3245A1BEA6A /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1A6B03A1E64173004DD5AC /* Routes.swift */; };
@@ -93,6 +99,7 @@
 
 /* Begin PBXFileReference section */
 		04C9A981F3D7737E337A5664 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
+		0585D8A2D9807FF23D9C70F3 /* LiquidGlass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidGlass.swift; sourceTree = "<group>"; };
 		06E58538F5A128E716481DEC /* SovereignTrustApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SovereignTrustApp.swift; sourceTree = "<group>"; };
 		09BAC52A75C9C51725DC6CEC /* ScanOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanOverlay.swift; sourceTree = "<group>"; };
 		0C8D50866CE374060930C293 /* TrustNetworkCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustNetworkCard.swift; sourceTree = "<group>"; };
@@ -104,6 +111,7 @@
 		1CCB43D4E5EADC6506F0D157 /* QRGeneratorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRGeneratorService.swift; sourceTree = "<group>"; };
 		1D1A6B03A1E64173004DD5AC /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		20E8E59349DF07DD51809B1A /* GlowOrb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowOrb.swift; sourceTree = "<group>"; };
+		2564F1E7A89214637C798F8C /* GlassTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassTextField.swift; sourceTree = "<group>"; };
 		2711282C5F91E1EBD748AA8E /* AuthorBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorBadge.swift; sourceTree = "<group>"; };
 		30725C4C21BFBB88EF5D1A2D /* AppearanceSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSetup.swift; sourceTree = "<group>"; };
 		31860BD8091D475D7F7425EE /* FraudSignalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FraudSignalService.swift; sourceTree = "<group>"; };
@@ -112,6 +120,7 @@
 		3B1B86953B1E5723FB77D99E /* VerificationFlowCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationFlowCard.swift; sourceTree = "<group>"; };
 		3C5BD9669FFECB0CFD4A4B02 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
 		3F75D4115B64DB80C4EA8178 /* GlassButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassButton.swift; sourceTree = "<group>"; };
+		45C9602B192183142A7D04F3 /* GlassShaderBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassShaderBridge.swift; sourceTree = "<group>"; };
 		47479EA715462CFB47BA2E05 /* VerificationResultCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationResultCard.swift; sourceTree = "<group>"; };
 		4CCE9D1EEB56664F73038F98 /* QuickActionsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsGrid.swift; sourceTree = "<group>"; };
 		4DA01FC5200CED56DD8759F8 /* ScreenContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenContainer.swift; sourceTree = "<group>"; };
@@ -134,6 +143,7 @@
 		82985DFB043CF86FBA8EB3E8 /* VerifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyView.swift; sourceTree = "<group>"; };
 		82BCEC66D165279A7387000E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		83A81ED0C5B61A536EAD9B68 /* CredentialCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialCard.swift; sourceTree = "<group>"; };
+		87AC5C0795B5E140B493DA14 /* GlassPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassPanel.swift; sourceTree = "<group>"; };
 		8CC1C43EF65216FB36F4F26D /* DateHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelpers.swift; sourceTree = "<group>"; };
 		8DB94EDF97C653D7B004BC9D /* HandshakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandshakeView.swift; sourceTree = "<group>"; };
 		91520A8132162C2028CE4383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -161,6 +171,8 @@
 		C45E3D4591D2AE8E8510F7FC /* TrustGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustGraph.swift; sourceTree = "<group>"; };
 		C6B2184C6A3C7A0CEF924B0B /* Handshake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handshake.swift; sourceTree = "<group>"; };
 		C908B187D4637EFCB9732E8D /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
+		C9265F93E26D81B0A8F26D63 /* GlassDistortion.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = GlassDistortion.metal; sourceTree = "<group>"; };
+		CA52D728928BE91810B639E7 /* GlassDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassDemoView.swift; sourceTree = "<group>"; };
 		CA60F7FC2B06020DCB31AA78 /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
 		D034F02FE04AC2C8D439EE4B /* PassportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassportView.swift; sourceTree = "<group>"; };
 		D0EAF3EAD7B5243DE3FA2B88 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
@@ -237,6 +249,7 @@
 		19F588D289B989BF6122E89F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				CA52D728928BE91810B639E7 /* GlassDemoView.swift */,
 				F158BCDCCA799C7B6A91DE7C /* SettingsView.swift */,
 				D26C2A2800B7A5C70E4E580A /* TrustConceptCard.swift */,
 				6336FEEBCE8725474228FDFB /* TrustEngineView.swift */,
@@ -418,6 +431,8 @@
 				AEE05A047E6048058D9CA52F /* EmptyState.swift */,
 				3F75D4115B64DB80C4EA8178 /* GlassButton.swift */,
 				CA60F7FC2B06020DCB31AA78 /* GlassCard.swift */,
+				87AC5C0795B5E140B493DA14 /* GlassPanel.swift */,
+				2564F1E7A89214637C798F8C /* GlassTextField.swift */,
 				20E8E59349DF07DD51809B1A /* GlowOrb.swift */,
 				C908B187D4637EFCB9732E8D /* LoadingState.swift */,
 				4DA01FC5200CED56DD8759F8 /* ScreenContainer.swift */,
@@ -506,6 +521,9 @@
 			children = (
 				0E52F093398A2981B171CFBE /* Colors.swift */,
 				974C6397FF3A2CF88EA5DA26 /* DesignTokens.swift */,
+				C9265F93E26D81B0A8F26D63 /* GlassDistortion.metal */,
+				45C9602B192183142A7D04F3 /* GlassShaderBridge.swift */,
+				0585D8A2D9807FF23D9C70F3 /* LiquidGlass.swift */,
 				8065417BD2057BFD4C726692 /* Typography.swift */,
 			);
 			path = Theme;
@@ -603,6 +621,11 @@
 				7651286657E254AAC519D90B /* FraudSignalService.swift in Sources */,
 				7EBF7CCB89F1C8398B56EE6F /* GlassButton.swift in Sources */,
 				FB2DA9F7A78BDBD33928D2E5 /* GlassCard.swift in Sources */,
+				4FFA56C293CB00A64D4DFC99 /* GlassDemoView.swift in Sources */,
+				3E9D70DD24FBBB11AE8AF5FC /* GlassDistortion.metal in Sources */,
+				4313E5FE87C70474EA1F51F3 /* GlassPanel.swift in Sources */,
+				8063D1D95FDEE6D4C5469CE9 /* GlassShaderBridge.swift in Sources */,
+				6DFD3D57E00285AAA3D939FB /* GlassTextField.swift in Sources */,
 				3B8E708BB170E5246ECED885 /* GlowOrb.swift in Sources */,
 				238BDF78688F3B9C15E93715 /* Handshake.swift in Sources */,
 				C7A392498C3C5B5D656A2F1F /* HandshakeService.swift in Sources */,
@@ -614,6 +637,7 @@
 				9097FC71B665812F60EE69B1 /* IdentityCard.swift in Sources */,
 				DA4C3F716681FEE7BECE9EAB /* IdentityStats.swift in Sources */,
 				0F45EBCE58165588CC262873 /* IssuerDirectory.swift in Sources */,
+				95AAAF057C66D75F0A01AF44 /* LiquidGlass.swift in Sources */,
 				888F47B8A2D17629E271B644 /* LoadingState.swift in Sources */,
 				6E26886549B31F89FEE0ADCD /* MockData.swift in Sources */,
 				BC0B2B888D8BA0265FEB7198 /* PassportView.swift in Sources */,
@@ -715,7 +739,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 2.0.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -736,7 +760,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = V277FF3Q3D;
 				INFOPLIST_FILE = Sources/SovereignTrust/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -795,7 +819,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 2.0.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -815,7 +839,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = V277FF3Q3D;
 				INFOPLIST_FILE = Sources/SovereignTrust/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

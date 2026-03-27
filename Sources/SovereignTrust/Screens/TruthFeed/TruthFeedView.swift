@@ -37,7 +37,7 @@ struct TruthFeedView: View {
         .ignoresSafeArea(edges: .bottom)
         .navigationTitle("Truth Feed")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbarBackground(.ultraThinMaterial, for: .navigationBar)
+
         .toolbarColorScheme(.dark, for: .navigationBar)
         .task { await vm.load() }
     }

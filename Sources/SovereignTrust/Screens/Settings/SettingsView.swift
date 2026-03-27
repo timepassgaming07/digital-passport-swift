@@ -15,7 +15,7 @@ struct SettingsView: View {
         ScreenContainer {
             VStack(spacing:18) {
                 // Profile card — FROST
-                GlassCard(cornerRadius:26,glowColor:identity.trustState.glowColor,glowOpacity:0.15,innerPadding:16,style:.frost) {
+                GlassCard(cornerRadius:26,innerPadding:16,style:.liquid) {
                     HStack(spacing:14) {
                         ZStack {
                             Circle().stroke(identity.trustState.glowColor.opacity(0.5),lineWidth:2).frame(width:62,height:62)
@@ -44,18 +44,16 @@ struct SettingsView: View {
                                 .font(.caption).foregroundStyle(subColor)
                         }
                         Spacer()
-                        // Apple-style toggle
+                        // Native liquid glass toggle
                         ZStack {
                             Capsule()
-                                .fill(dark
-                                    ? LinearGradient(colors:[Color(hex:"7C3AED"),Color(hex:"4F46E5")],startPoint:.leading,endPoint:.trailing)
-                                    : LinearGradient(colors:[Color(hex:"22D3EE"),Color(hex:"3B82F6")],startPoint:.leading,endPoint:.trailing))
+                                .fill(.clear)
                                 .frame(width:52,height:30)
-                                .overlay(Capsule().stroke(Color.white.opacity(0.25),lineWidth:0.8))
-                                .shadow(color:dark ? Color(hex:"7C3AED").opacity(0.5):Color(hex:"22D3EE").opacity(0.4),radius:8)
+                                .glassEffect(.regular, in: .capsule)
                             Circle()
-                                .fill(.white)
+                                .fill(.clear)
                                 .frame(width:24,height:24)
+                                .glassEffect(.regular, in: .circle)
                                 .shadow(color:.black.opacity(0.20),radius:4,x:0,y:2)
                                 .overlay(
                                     Image(systemName: dark ? "moon.fill" : "sun.max.fill")
@@ -92,13 +90,29 @@ struct SettingsView: View {
 
                 // Trust Engine
                 NavigationLink(value:NavRoute.trustEngine) {
-                    GlassCard(cornerRadius:22,glowColor: Color.stCyan,glowOpacity:0.08,innerPadding:16,style:.liquid) {
+                    GlassCard(cornerRadius:22,innerPadding:16,style:.liquid) {
                         HStack {
                             Image(systemName:"network").foregroundStyle(Color.stCyan).font(.title2)
                                 .shadow(color: Color.stCyan.opacity(0.4),radius:6)
                             VStack(alignment:.leading,spacing:2) {
                                 Text("Trust Engine").font(.headline.weight(.semibold)).foregroundStyle(textColor)
                                 Text("Explore the trust graph").font(.caption).foregroundStyle(subColor)
+                            }
+                            Spacer()
+                            Image(systemName:"chevron.right").foregroundStyle(subColor.opacity(0.6))
+                        }
+                    }
+                }.buttonStyle(.plain)
+
+                // Glass Demo
+                NavigationLink(value:NavRoute.glassDemo) {
+                    GlassCard(cornerRadius:22,innerPadding:16,style:.liquid) {
+                        HStack {
+                            Image(systemName:"sparkles").foregroundStyle(Color.stPurple).font(.title2)
+                                .shadow(color: Color.stPurple.opacity(0.4),radius:6)
+                            VStack(alignment:.leading,spacing:2) {
+                                Text("Glass Demo").font(.headline.weight(.semibold)).foregroundStyle(textColor)
+                                Text("Liquid glass component gallery").font(.caption).foregroundStyle(subColor)
                             }
                             Spacer()
                             Image(systemName:"chevron.right").foregroundStyle(subColor.opacity(0.6))
@@ -120,7 +134,7 @@ struct SettingsView: View {
             }
         }
         .navigationTitle("Settings")
-        .toolbarBackground(.ultraThinMaterial,for:.navigationBar)
+
         .toolbarColorScheme(dark ? .dark:.light,for:.navigationBar)
         .sheet(isPresented:$showBioSheet) { bioSheet }
         .task { await loadFP() }

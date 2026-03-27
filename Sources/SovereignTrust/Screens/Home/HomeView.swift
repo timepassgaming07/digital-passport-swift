@@ -27,8 +27,7 @@ struct HomeView: View {
                                 Image(systemName:"gearshape.fill").font(.body.weight(.semibold))
                                     .foregroundStyle(dark ? Color.white.opacity(0.75):Color(hex:"374151"))
                                     .frame(width:36,height:36)
-                                    .background(.ultraThinMaterial,in:Circle())
-                                    .overlay(Circle().stroke(Color.white.opacity(dark ? 0.20:0.40),lineWidth:0.8))
+                                    .glass(cornerRadius: .infinity)
                             }
                         }
                     }.padding(.top,16)
@@ -42,9 +41,10 @@ struct HomeView: View {
                     }
                     QuickActionsGrid(identity:vm.identity)
                     RecentVerificationsSection(results:vm.recentVerifications)
-                    Spacer(minLength:110)
                 }
-                .padding(.horizontal,20).padding(.bottom,110)
+                .padding(.horizontal,20)
+                .padding(.top,8)
+                .padding(.bottom,100)
             }
             .scrollContentBackground(.hidden)
         }

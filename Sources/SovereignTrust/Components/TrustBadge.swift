@@ -18,9 +18,6 @@ struct TrustBadge: View {
         }
         .padding(.horizontal, size.hPad)
         .padding(.vertical, size.vPad)
-        // Frost glass badge
-        .background(.ultraThinMaterial, in: Capsule())
-        .overlay(Capsule().stroke(state.glowColor.opacity(0.40), lineWidth: 0.8))
-        .shadow(color: state.glowColor.opacity(0.25), radius: 8)
+        .glassEffect(Glass.clear.tint(state.glowColor.opacity(0.30)), in: .capsule)
     }
 }

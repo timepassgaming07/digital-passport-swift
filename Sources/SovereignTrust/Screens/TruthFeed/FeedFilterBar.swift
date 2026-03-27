@@ -18,8 +18,8 @@ struct FeedFilterBar: View {
                             }
                         }
                         .padding(.horizontal,14).padding(.vertical,8)
-                        .background(vm.filter==f ? AnyShapeStyle(.regularMaterial) : AnyShapeStyle(Color.clear),in:Capsule())
-                        .overlay(Capsule().stroke(vm.filter==f ? Color.stCyan.opacity(0.5) : Color.white.opacity(0.1),lineWidth:1))
+                        .glassButton(glow: vm.filter==f ? Color.stCyan : .clear, glowIntensity: vm.filter==f ? 0.30 : 0)
+                        .overlay(Capsule().stroke(vm.filter==f ? Color.stCyan.opacity(0.50) : Color.white.opacity(0.12),lineWidth:1))
                     }.buttonStyle(.plain)
                 }
             }.padding(.horizontal,16).padding(.vertical,8)

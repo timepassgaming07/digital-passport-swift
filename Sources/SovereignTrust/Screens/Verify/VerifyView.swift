@@ -30,8 +30,7 @@ struct VerifyView: View {
                         Button { input = UIPasteboard.general.string ?? "" } label: {
                             Label("Paste", systemImage: "doc.on.clipboard").font(.subheadline).foregroundStyle(Color.stSecondary)
                                 .padding(.horizontal, 16).padding(.vertical, 10)
-                                .background(.ultraThinMaterial, in: Capsule())
-                                .overlay(Capsule().stroke(Color.white.opacity(0.2), lineWidth: 0.8))
+                                .glassButton()
                         }
                         Spacer()
                         GlassButton(label: "Verify", icon: "checkmark.seal.fill", isLoading: engine.isRunning) {
@@ -64,7 +63,7 @@ struct VerifyView: View {
         .ignoresSafeArea(edges: .bottom)
         .navigationTitle("Verify")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbarBackground(.ultraThinMaterial, for: .navigationBar)
+
         .toolbarColorScheme(.dark, for: .navigationBar)
         .animation(.stSpring, value: engine.isRunning)
     }

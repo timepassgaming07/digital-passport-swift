@@ -12,8 +12,11 @@ struct FraudSignalBadge: View {
                     .foregroundStyle(signal.severity.color.opacity(0.7))
             }
             .padding(.horizontal,10).padding(.vertical,6)
-            .background(.regularMaterial,in:Capsule())
-            .overlay(Capsule().stroke(signal.severity.color.opacity(0.30),lineWidth:1))
+            .liquidGlass(LiquidGlassConfig(
+                cornerRadius: .infinity,
+                glowColor: signal.severity.color,
+                glowIntensity: 0.15
+            ))
             if let d = signal.detail {
                 Text(d).font(.stCaption).foregroundStyle(Color.stTertiary).padding(.leading,20)
             }

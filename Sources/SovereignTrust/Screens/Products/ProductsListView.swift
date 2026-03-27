@@ -21,7 +21,7 @@ struct ProductsListView: View {
             }
         }
         .navigationTitle("Products")
-        .toolbarBackground(.ultraThinMaterial,for:.navigationBar)
+
         .toolbarColorScheme(.dark,for:.navigationBar)
         .navigationDestination(item:$selected) { p in ProductDetailView(product:p) }
     }

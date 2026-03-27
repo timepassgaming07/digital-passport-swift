@@ -23,7 +23,7 @@ struct CredentialDetailSheet: View {
                     TrustBadge(state:c.trustState)
                     // QR code
                     if let img = qrImage {
-                        GlassCard(cornerRadius:24,glowColor:c.trustState.glowColor,glowOpacity:0.15,innerPadding:20) {
+                        GlassCard(cornerRadius:24,innerPadding:20) {
                             VStack(spacing:12) {
                                 Image(uiImage:img).interpolation(.none).resizable()
                                     .scaledToFit().frame(width:200,height:200)

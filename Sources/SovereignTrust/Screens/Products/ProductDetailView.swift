@@ -6,7 +6,7 @@ struct ProductDetailView: View {
             AmbientBackground()
             ScrollView(showsIndicators:false) {
                 VStack(spacing:20) {
-                    GlassCard(cornerRadius:28,glowColor:product.trustState.glowColor,glowOpacity:0.22) {
+                    GlassCard(cornerRadius:28,glowColor:product.trustState.glowColor,glowOpacity:0.08) {
                         VStack(alignment:.leading,spacing:12) {
                             HStack {
                                 VStack(alignment:.leading,spacing:4) {
@@ -31,7 +31,7 @@ struct ProductDetailView: View {
             }
         }
         .navigationTitle(product.name)
-        .toolbarBackground(.ultraThinMaterial,for:.navigationBar)
+
         .toolbarColorScheme(.dark,for:.navigationBar)
     }
 }

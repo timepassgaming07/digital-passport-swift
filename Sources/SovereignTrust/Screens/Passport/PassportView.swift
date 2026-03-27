@@ -20,7 +20,7 @@ struct PassportView: View {
         }
         .ignoresSafeArea(edges: .bottom)
         .navigationTitle("Passport")
-        .toolbarBackground(.ultraThinMaterial, for: .navigationBar)
+
         .toolbarColorScheme(.dark, for: .navigationBar)
         .task { await vm.load(subjectDid: identity.did) }
         .onAppear { withAnimation(.stFloat) { floatY = 3 } }

@@ -26,7 +26,8 @@ struct TrustGraphCard: View {
                             Text(t).font(.stCaption)
                                 .foregroundStyle(selected==i ? Color.stCyan : Color.stTertiary)
                                 .padding(.horizontal,10).padding(.vertical,6)
-                                .background(selected==i ? AnyShapeStyle(.regularMaterial):AnyShapeStyle(.clear),in:Capsule())
+                                .background { if selected==i { Capsule().fill(.clear).glassEffect(.regular, in: .capsule) } }
+                                .shadow(color: selected==i ? Color.stCyan.opacity(0.20) : .clear, radius: 6)
                         }.buttonStyle(.plain)
                     }
                 }
