@@ -39,6 +39,7 @@
 		43A8160C97A42E14BCFD654E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158BCDCCA799C7B6A91DE7C /* SettingsView.swift */; };
 		486D2B89F7E793543906A38F /* TrustScoreRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27D375DF582EA56D7D2C841 /* TrustScoreRing.swift */; };
 		4B08F71B2B2ADDBACC4AE8FD /* QRGeneratorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCB43D4E5EADC6506F0D157 /* QRGeneratorService.swift */; };
+		4BC10DF30A19BE724BB57A64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44F8834C0F99FBAFB4FC3C5E /* Assets.xcassets */; };
 		4FFA56C293CB00A64D4DFC99 /* GlassDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52D728928BE91810B639E7 /* GlassDemoView.swift */; };
 		50598C1C9C30AA4AA8D8AA13 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1026272BBB5CC288C8CE50F /* Formatters.swift */; };
 		505F2EA2D0C6607744B2FEBB /* TrustConceptCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C2A2800B7A5C70E4E580A /* TrustConceptCard.swift */; };
@@ -120,6 +121,7 @@
 		3B1B86953B1E5723FB77D99E /* VerificationFlowCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationFlowCard.swift; sourceTree = "<group>"; };
 		3C5BD9669FFECB0CFD4A4B02 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
 		3F75D4115B64DB80C4EA8178 /* GlassButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassButton.swift; sourceTree = "<group>"; };
+		44F8834C0F99FBAFB4FC3C5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45C9602B192183142A7D04F3 /* GlassShaderBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassShaderBridge.swift; sourceTree = "<group>"; };
 		47479EA715462CFB47BA2E05 /* VerificationResultCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationResultCard.swift; sourceTree = "<group>"; };
 		4CCE9D1EEB56664F73038F98 /* QuickActionsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsGrid.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 		845F583861A3234C60CB6033 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				44F8834C0F99FBAFB4FC3C5E /* Assets.xcassets */,
 				91520A8132162C2028CE4383 /* Info.plist */,
 			);
 			path = Resources;
@@ -537,6 +540,7 @@
 			buildConfigurationList = B036555103478792E7E81EBE /* Build configuration list for PBXNativeTarget "SovereignTrust" */;
 			buildPhases = (
 				CA7998B06B276ECA216AFC05 /* Sources */,
+				82D0871186221AB4CAC5A9AB /* Resources */,
 				040342D9AF7EA580460AD17E /* Frameworks */,
 			);
 			buildRules = (
@@ -586,6 +590,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		82D0871186221AB4CAC5A9AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BC10DF30A19BE724BB57A64 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CA7998B06B276ECA216AFC05 /* Sources */ = {

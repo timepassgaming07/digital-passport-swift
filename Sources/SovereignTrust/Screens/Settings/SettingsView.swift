@@ -30,45 +30,26 @@ struct SettingsView: View {
                     }
                 }
 
-                // THEME TOGGLE — Apple-style with liquid glass pill
+                // THEME TOGGLE — Apple native toggle with liquid glass
                 GlassCard(cornerRadius:22,innerPadding:16,style:.liquid) {
-                    HStack {
-                        Image(systemName:dark ? "moon.fill" : "sun.max.fill")
-                            .foregroundStyle(dark ? Color.stPurple : Color(hex:"F59E0B"))
-                            .font(.title3)
-                            .shadow(color:dark ? Color.stPurple.opacity(0.5) : Color(hex:"F59E0B").opacity(0.5),radius:6)
-                        VStack(alignment:.leading,spacing:2) {
-                            Text(dark ? "Dark Mode" : "Light Mode")
-                                .font(.headline.weight(.semibold)).foregroundStyle(textColor)
-                            Text(dark ? "Tap to switch to light" : "Tap to switch to dark")
-                                .font(.caption).foregroundStyle(subColor)
-                        }
-                        Spacer()
-                        // Native liquid glass toggle
-                        ZStack {
-                            Capsule()
-                                .fill(.clear)
-                                .frame(width:52,height:30)
-                                .glassEffect(.regular, in: .capsule)
-                            Circle()
-                                .fill(.clear)
-                                .frame(width:24,height:24)
-                                .glassEffect(.regular, in: .circle)
-                                .shadow(color:.black.opacity(0.20),radius:4,x:0,y:2)
-                                .overlay(
-                                    Image(systemName: dark ? "moon.fill" : "sun.max.fill")
-                                        .font(.system(size:11,weight:.bold))
-                                        .foregroundStyle(dark ? Color(hex:"7C3AED") : Color(hex:"F59E0B"))
-                                )
-                                .offset(x: dark ? 11 : -11)
-                                .animation(.spring(response:0.35,dampingFraction:0.75),value:dark)
-                        }
-                        .onTapGesture {
-                            withAnimation(.spring(response:0.35,dampingFraction:0.75)) {
-                                appState.isDarkMode.toggle()
+                    Toggle(isOn: Bindable(appState).isDarkMode) {
+                        HStack(spacing:12) {
+                            Image(systemName:dark ? "moon.fill" : "sun.max.fill")
+                                .foregroundStyle(dark ? Color.stPurple : Color(hex:"F59E0B"))
+                                .font(.title3)
+                                .shadow(color:dark ? Color.stPurple.opacity(0.5) : Color(hex:"F59E0B").opacity(0.5),radius:6)
+                                .contentTransition(.symbolEffect(.replace))
+                            VStack(alignment:.leading,spacing:2) {
+                                Text(dark ? "Dark Mode" : "Light Mode")
+                                    .font(.system(.headline, design:.rounded, weight:.semibold))
+                                    .foregroundStyle(textColor)
+                                Text(dark ? "Tap to switch to light" : "Tap to switch to dark")
+                                    .font(.system(.caption, design:.rounded))
+                                    .foregroundStyle(subColor)
                             }
                         }
                     }
+                    .tint(Color.stPurple)
                 }
 
                 // Security — LIQUID
