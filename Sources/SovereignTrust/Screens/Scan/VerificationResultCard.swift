@@ -2,6 +2,7 @@ import SwiftUI
 
 struct VerificationResultCard: View {
     let result: VerificationResult
+    var trustScore: TrustScore? = nil
     var onDismiss: (() -> Void)? = nil
     @State private var layer = 0
     @State private var appeared = false
@@ -51,6 +52,9 @@ struct VerificationResultCard: View {
                         Spacer()
                         VStack(spacing:6) {
                             TrustBadge(state:result.trustState, size:.small)
+                            if let ts = trustScore {
+                                TrustScoreBadge(trustScore: ts, compact: true, showReasons: layer >= 1)
+                            }
                             if let dismiss = onDismiss {
                                 Button(action:dismiss) {
                                     Image(systemName:"xmark.circle.fill").foregroundStyle(Color.stTertiary)

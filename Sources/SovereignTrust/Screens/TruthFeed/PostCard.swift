@@ -21,6 +21,9 @@ struct PostCard: View {
                         .font(.body).foregroundStyle(.white.opacity(0.90))
                         .lineLimit(isExpanded ? nil : 3)
                     ClaimBar(verified:post.verifiedClaimCount,total:post.claimCount)
+                    if let proof = post.documentProof {
+                        documentProofSection(proof)
+                    }
                     if isExpanded && !showFraud {
                         tagsRow.transition(.opacity.combined(with:.offset(y:8)))
                     }
@@ -71,5 +74,43 @@ struct PostCard: View {
             Spacer()
             Text(Formatters.timeAgo(post.publishedAt)).font(.caption).foregroundStyle(.white.opacity(0.40))
         }
+    }
+
+    private func documentProofSection(_ proof: DocumentProofMetadata) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack {
+                Label("Cryptographic Proof", systemImage: proof.documentType.icon)
+                    .font(.caption)
+                    .foregroundStyle(Color.stCyan)
+                Spacer()
+                Text(proof.documentType.label.uppercased())
+                    .font(.stLabel)
+                    .foregroundStyle(Color.stCyan.opacity(0.85))
+            }
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text("Code: \(proof.verificationCode)")
+                    .font(.stMono)
+                    .foregroundStyle(Color.stPrimary)
+                Text("Verified by wallet \(proof.issuerAccountId) • \(proof.issuerRole)")
+                    .font(.stMonoSm)
+                    .foregroundStyle(Color.stSecondary)
+                Text("Issuer DID: \(Formatters.shortDID(proof.issuerDid))")
+                    .font(.stMonoSm)
+                    .foregroundStyle(Color.stTertiary)
+                Text("Hash: \(Formatters.shortHash(proof.payloadHash))")
+                    .font(.stMonoSm)
+                    .foregroundStyle(Color.stTertiary)
+                Text("Checks: \(proof.verificationCount) • ML \(proof.mlRiskScore)/100")
+                    .font(.stMonoSm)
+                    .foregroundStyle(proof.mlRiskScore > 70 ? Color.stRed : proof.mlRiskScore > 40 ? Color.stGold : Color.stGreen)
+            }
+        }
+        .padding(10)
+        .liquidGlass(LiquidGlassConfig(
+            cornerRadius: 12,
+            glowColor: Color.stCyan,
+            glowIntensity: 0.12
+        ))
     }
 }

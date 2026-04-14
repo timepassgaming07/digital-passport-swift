@@ -4,7 +4,7 @@ struct IdentityStats: View {
     var body: some View {
         HStack(spacing:12) {
             stat("\(credCount)", "Credentials", "◈")
-            stat("\(identity.trustScore)%", "Trust Score", "⭐")
+            stat(identity.trustState.label, "Trust State", "🧠")
             stat(identity.biometryType.rawValue, "Biometry", "🔐")
         }
     }

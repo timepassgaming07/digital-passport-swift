@@ -20,7 +20,12 @@ struct IdentityCard: View {
                         }
                     }
                     Spacer()
-                    TrustScoreRing(score:identity.trustScore,size:68)
+                    VStack(alignment: .trailing, spacing: 6) {
+                        TrustBadge(state: identity.trustState, size: .small)
+                        Text("ML Active")
+                            .font(.system(size: 9, weight: .bold, design: .rounded))
+                            .foregroundStyle(.white.opacity(0.70))
+                    }
                 }.padding(16)
                 GlassDivider()
                 HStack {

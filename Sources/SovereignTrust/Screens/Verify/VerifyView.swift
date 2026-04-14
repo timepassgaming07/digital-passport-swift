@@ -5,6 +5,7 @@ struct VerifyView: View {
     @State private var engine = VerificationEngine()
     @FocusState private var focused: Bool
     @State private var appState = AppState.shared
+    @State private var trustScoreVM = TrustScoreViewModel()
     var body: some View {
         ZStack {
             AmbientBackground(isDark: appState.isDarkMode).ignoresSafeArea()
@@ -36,7 +37,12 @@ struct VerifyView: View {
                         GlassButton(label: "Verify", icon: "checkmark.seal.fill", isLoading: engine.isRunning) {
                             guard !input.trimmingCharacters(in: .whitespaces).isEmpty else { return }
                             focused = false
-                            Task { await engine.verify(raw: input, type: selected) }
+                            Task {
+                                await engine.verify(raw: input, type: selected)
+                                if let r = engine.result {
+                                    trustScoreVM.evaluate(result: r, rawPayload: input)
+                                }
+                            }
                         }
                     }
                     if engine.isRunning {
@@ -49,7 +55,7 @@ struct VerifyView: View {
                         }.transition(.move(edge: .bottom).combined(with: .opacity))
                     }
                     if let r = engine.result, !engine.isRunning {
-                        VerificationResultCard(result: r) { engine.result = nil }
+                        VerificationResultCard(result: r, trustScore: trustScoreVM.score) { engine.result = nil; trustScoreVM.reset() }
                             .transition(.move(edge: .bottom).combined(with: .opacity))
                     }
                     Spacer(minLength: 110)

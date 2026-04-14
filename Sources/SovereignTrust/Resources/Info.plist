@@ -14,6 +14,8 @@
     <string>Sovereign Trust needs camera access to scan QR codes for identity verification.</string>
     <key>NSFaceIDUsageDescription</key>
     <string>Sovereign Trust uses Face ID to protect your identity and sign authentication challenges.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Sovereign Trust uses your location to record where products are scanned and verified. This creates a real GPS audit trail for product authenticity.</string>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>Save or share credential QR codes from your wallet.</string>
     <key>NSPhotoLibraryAddUsageDescription</key>

@@ -13,10 +13,10 @@ struct ContentView: View {
                         .tabItem { Label("Home", systemImage: "house.fill") }.tag(0)
                     ScanView()
                         .tabItem { Label("Scan", systemImage: "qrcode.viewfinder") }.tag(1)
+                    ProductsListView()
+                        .tabItem { Label("Products", systemImage: "shippingbox.fill") }.tag(2)
                     PassportView(identity: identity)
-                        .tabItem { Label("Passport", systemImage: "person.crop.rectangle.fill") }.tag(2)
-                    VerifyView()
-                        .tabItem { Label("Verify", systemImage: "checkmark.seal.fill") }.tag(3)
+                        .tabItem { Label("Passport", systemImage: "person.crop.rectangle.fill") }.tag(3)
                     TruthFeedView()
                         .tabItem { Label("Feed", systemImage: "newspaper.fill") }.tag(4)
                 }
@@ -29,6 +29,10 @@ struct ContentView: View {
                     case .trustEngine: TrustEngineView()
                     case .passport:    PassportView(identity: identity)
                     case .glassDemo:   GlassDemoView()
+                    case .productAuth: ProductAuthView()
+                    case .productWallet: ProductWalletView()
+                    case .verify:      VerifyView()
+                    case .manufacturerVerify: ManufacturerVerifyView()
                     }
                 }
             }
@@ -38,5 +42,5 @@ struct ContentView: View {
 }
 
 enum NavRoute: Hashable {
-    case settings, trustEngine, passport, glassDemo
+    case settings, trustEngine, passport, glassDemo, productAuth, productWallet, verify, manufacturerVerify
 }

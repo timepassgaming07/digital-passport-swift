@@ -2,6 +2,7 @@ import SwiftUI
 
 struct CredentialCard: View {
     let cwi: CredentialWithIssuer
+    var trustScore: TrustScore? = nil
     var body: some View {
         GlassCard(cornerRadius:22,glowColor:cwi.credential.trustState.glowColor,glowOpacity:0.08,innerPadding:0,style:.liquid) {
             HStack(spacing:0) {
@@ -19,6 +20,9 @@ struct CredentialCard: View {
                         Label(cwi.credential.type.label,systemImage:cwi.credential.type.icon)
                             .font(.caption).foregroundStyle(.white.opacity(0.50))
                         TrustBadge(state:cwi.credential.trustState,size:.small)
+                        if let ts = trustScore {
+                            TrustScoreInline(trustScore: ts)
+                        }
                     }
                     if let exp = cwi.credential.expiresAt {
                         Text("Expires \(exp.formatted(style:.medium))")

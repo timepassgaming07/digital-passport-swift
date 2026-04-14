@@ -24,7 +24,7 @@ struct WalletSummaryCard: View {
                             .foregroundStyle(.white.opacity(0.40)).lineLimit(1)
                     }
                     Spacer()
-                    TrustScoreRing(score:identity.trustScore,size:68)
+                    TrustBadge(state: identity.trustState, size: .small)
                 }
                 .padding(16)
 

@@ -8,8 +8,9 @@ struct QuickActionsGrid: View {
             LazyVGrid(columns:[GridItem(.flexible(),spacing:12),GridItem(.flexible(),spacing:12)],spacing:12) {
                 ActionTile(title:"Scan QR",  sub:"Verify anything", icon:"qrcode.viewfinder",         dest:AnyView(ScanView()))
                 ActionTile(title:"Verify",   sub:"Manual check",    icon:"checkmark.seal.fill",        dest:AnyView(VerifyView()))
-                ActionTile(title:"Passport", sub:"My identity",     icon:"person.crop.rectangle.fill", dest:AnyView(PassportView(identity:identity)))
-                ActionTile(title:"Products", sub:"Authenticity",    icon:"shippingbox.fill",           dest:AnyView(ProductsListView()))
+                ActionTile(title:"Product Auth", sub:"Scan & claim", icon:"shippingbox.and.arrow.backward.fill", dest:AnyView(ProductAuthView()))
+                ActionTile(title:"My Wallet", sub:"Owned products", icon:"wallet.bifold.fill",         dest:AnyView(ProductWalletView()))
+                ActionTile(title:"File Request", sub:"Requester/holder QR", icon:"doc.text.viewfinder", dest:AnyView(DocumentRequestWorkflowView()))
             }
         }
     }

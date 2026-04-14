@@ -3,6 +3,7 @@ struct CredentialDetailSheet: View {
     let cwi: CredentialWithIssuer
     @Environment(\.dismiss) private var dismiss
     @State private var qrImage: UIImage? = nil
+    @State private var trustScoreVM = TrustScoreViewModel()
     private var c: Credential { cwi.credential }
     private var iss: Issuer   { cwi.issuer }
     var body: some View {
@@ -20,7 +21,12 @@ struct CredentialDetailSheet: View {
                             Image(systemName:"xmark.circle.fill").font(.title2).foregroundStyle(Color.stTertiary)
                         }
                     }.padding(.top,8)
-                    TrustBadge(state:c.trustState)
+                    HStack(spacing: 8) {
+                        TrustBadge(state:c.trustState)
+                        if let ts = trustScoreVM.score {
+                            TrustScoreBadge(trustScore: ts, compact: false, showReasons: true)
+                        }
+                    }
                     // QR code
                     if let img = qrImage {
                         GlassCard(cornerRadius:24,innerPadding:20) {
@@ -60,7 +66,10 @@ struct CredentialDetailSheet: View {
                 .padding(.horizontal,20)
             }
         }
-        .onAppear { qrImage = QRGeneratorService.generate(from:QRGeneratorService.credentialPayload(c)) }
+        .onAppear {
+            qrImage = QRGeneratorService.generate(from:QRGeneratorService.credentialPayload(c))
+            trustScoreVM.evaluateCredential(c, issuer: iss)
+        }
     }
     private func detailRow(_ l:String,_ v:String) -> some View {
         VStack(alignment:.leading,spacing:2) {

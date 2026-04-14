@@ -8,6 +8,7 @@ struct ScanView: View {
     @State private var engine = VerificationEngine()
     @State private var hasPermission = false
     @State private var currentTrustState: TrustState? = nil
+    @State private var trustScoreVM = TrustScoreViewModel()
 
     var body: some View {
         ZStack {
@@ -38,9 +39,10 @@ struct ScanView: View {
                     }
                     // Result
                     if let r = engine.result, !engine.isRunning {
-                        VerificationResultCard(result:r) {
+                        VerificationResultCard(result:r, trustScore: trustScoreVM.score) {
                             engine.result = nil; scannedCode = nil
                             cameraActive = true; currentTrustState = nil
+                            trustScoreVM.reset()
                         }
                         .transition(.move(edge:.bottom).combined(with:.opacity))
                     }
@@ -74,6 +76,9 @@ struct ScanView: View {
             Task {
                 await engine.verify(raw:code, type:type)
                 currentTrustState = engine.result?.trustState
+                if let r = engine.result {
+                    trustScoreVM.evaluate(result: r, rawPayload: code)
+                }
             }
         }
         .navigationTitle("Scan & Verify")

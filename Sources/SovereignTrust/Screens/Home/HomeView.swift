@@ -36,8 +36,8 @@ struct HomeView: View {
 
                     HStack(spacing:12) {
                         statTile("◈","\(vm.credentials.count)","Credentials")
-                        statTile("⭐","\(vm.identity.trustScore)%","Trust")
-                        statTile("🕐",vm.identity.lastVerifiedAt.map{Formatters.timeAgo($0)} ?? "–","Verified")
+                        statTile("🧾", "\(vm.recentVerifications.count)", "Recent Checks")
+                        statTile("🕐",vm.recentVerifications.first.map{Formatters.timeAgo($0.verifiedAt)} ?? "–","Last Activity")
                     }
                     QuickActionsGrid(identity:vm.identity)
                     RecentVerificationsSection(results:vm.recentVerifications)
